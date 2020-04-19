@@ -1,0 +1,91 @@
+body{
+    background-image: url('/Login/images/background.png');
+}
+h1{
+    padding-top: 5%;
+    text-align: center;
+}
+
+/* Create styling for the login page */
+.Login-form{
+    max-width: 300px;
+    margin: 10%;
+    background-color: white;
+    padding: 10%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.title{
+    padding-bottom: 5%;
+}
+ .email{
+     border-radius: 5px;
+     margin-bottom: 5%;
+     padding-top: 2%;
+     padding-bottom: 2%;
+     width: 100%;
+ }
+ .password{
+    border-radius: 5px;
+    margin-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+}
+.login{
+    border-radius: 5px;
+    margin-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 50%;
+    background-color: dodgerblue;
+}
+.link{
+    text-decoration: none;
+}
+
+/* Create styling for the registration page */
+.Register-form{
+    max-width: 300px;
+    margin: 10%;
+    background-color: white;
+    padding: 10%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.name{
+    border-radius: 5px;
+    margin-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+}
+
+ .email{
+     border-radius: 5px;
+     margin-bottom: 5%;
+     padding-top: 2%;
+     padding-bottom: 2%;
+     width: 100%;
+ }
+ .password{
+    border-radius: 5px;
+    margin-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+}
+.register{
+    border-radius: 5px;
+    margin-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 50%;
+    background-color: dodgerblue;
+}
+
+
+
+
