@@ -1,0 +1,17 @@
+{
+  "name": "websocketiojsvideo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "dev": "nodemon index"
+  },
+  "author": "Fidel Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {}
+}
