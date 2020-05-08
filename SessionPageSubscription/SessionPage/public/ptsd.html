@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>PTSD Help Session</title>
+</head>
+<body>
+
+    <!Navigation Bar>
+
+        <ul class="navbar">
+            <li><a href="selection.html">Home</a></li>
+            <li><a href="#">Button 2</a></li>
+            <li><a href="#">Button 3</a></li>
+            <li><a href="#">Button 4</a></li>
+            <li><a href="#">Button 5</a></li>
+            <li class="right"><a href="#">Contact</a></li>
+        </ul>
+
+    <h1>PTSD Help Session</h1>
+    
+    <div id="My-Chat">
+        <div id="chat-window">
+            <div id="output"></div>
+            <div id="feedback"></div>
+        </div>
+        <input id="handle" type="text" placeholder="Handle">
+        <input id="message" type="text" placeholder="Message">
+        <button id="send">Send Message</button>
+    </div>
+    
+
+    <script src="chat.js"></script>
+</body>
+</html>
