@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>MentalHealth - Log In</title>
+</head>
+<body>
+
+    <h1>Welcome to BeSane</h1>
+    <!-- Create a form for Logging in -->
+    <form class="Login-form" action="/login" method="POST">
+        <div>
+            <h1 class="title">Login to your Account</h1>
+            <label for="email"></label>
+            <input class="email type="email" id="email" name="email" placeholder="Email">
+        </div>
+
+        <div>
+            <label for="password"></label>
+            <input class="password" type="password" id="password" name="password" placeholder="Password">
+        </div>
+
+        <button type="submit" class="login">Log-In</button> <br>
+    <!-- Create a link back to the log in page -->
+    <a href="/register"" class="link">Don't have an Account?</a> <br> <br>
+
+    <!-- Display an error message (password or email incorrect) -->
+    <h3 class="error-message">
+        <% if (messages.error) { %>
+            <%= messages.error %>
+          <% } %>
+    </h3>
+    </form>
+
+    
+</body>
+</html>
