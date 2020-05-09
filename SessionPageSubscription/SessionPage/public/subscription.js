@@ -4,10 +4,10 @@ Author: Joseph Camacho-Terrazas
 */
 
 /*Session Objects*/
-var session1 = {name:"Depression", subscription:false, timeStart: 9, timeEnd: 11};
-var session2 = {name:"PTSD", subscription:false, timeStart: 11, timeEnd: 13};
-var session3 = {name:"Anxiety", subscription:false, timeStart: 13, timeEnd: 15};
-var session4 = {name:"Substance Abuse", subscription:false, timeStart: 15, timeEnd: 17};
+var session1 = {name:"Depression", subscription:"", timeStart: 9, timeEnd: 11};
+var session2 = {name:"PTSD", subscription:"", timeStart: 11, timeEnd: 13};
+var session3 = {name:"Anxiety", subscription:"", timeStart: 13, timeEnd: 15};
+var session4 = {name:"Substance Abuse", subscription:"", timeStart: 15, timeEnd: 17};
 
 /*Functions*/
 
@@ -17,76 +17,116 @@ If the user is subscribed, it will call checkTime to further verify join require
 Unsubscribing is currently under development.
 */
 function checkSubStatus() {
+    checkStorage();
     //depression switch
     switch (session1.subscription) {
-        case false:
+        case "false":
             document.getElementById("subInfo1").innerHTML = "Not Subscribed";
             document.getElementById("subJoin1").innerHTML = "<button id = \"joinButton\" onclick= subscribeToSession(1);>Subscribe</button>";
-            //document.getElementById("unbsub1").innerHTML = "";
+            document.getElementById("unsub1").innerHTML = "";
             break;
-        case true:
+        case "true":
             document.getElementById("subInfo1").innerHTML = "Subscribed";
             checkTime(1);
-            //document.getElementById("unsub1").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(1);>Unsubscribe</button>";
+            document.getElementById("unsub1").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(1);>Unsubscribe</button>";
             break;
         }
 
     //ptsd switch
     switch (session2.subscription) {
-        case false:
+        case "false":
             document.getElementById("subInfo2").innerHTML = "Not Subscribed";
             document.getElementById("subJoin2").innerHTML = "<button id = \"joinButton\" onclick= subscribeToSession(2);>Subscribe</button>";
-            //document.getElementById("unbsub2").innerHTML = "";
+            document.getElementById("unsub2").innerHTML = "";
             break;
-        case true:
+        case "true":
             document.getElementById("subInfo2").innerHTML = "Subscribed";
             checkTime(2);
-            //document.getElementById("unsub2").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(2);>Unsubscribe</button>";
+            document.getElementById("unsub2").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(2);>Unsubscribe</button>";
             break;
     }
 
     //anxiety switch
     switch (session3.subscription) {
-        case false:
+        case "false":
             document.getElementById("subInfo3").innerHTML = "Not Subscribed";
             document.getElementById("subJoin3").innerHTML = "<button id = \"joinButton\" onclick= subscribeToSession(3);>Subscribe</button>";
-            //document.getElementById("unbsub3").innerHTML = "";
+            document.getElementById("unsub3").innerHTML = "";
             break;
-        case true:
+        case "true":
             document.getElementById("subInfo3").innerHTML = "Subscribed";
             checkTime(3);
-            //document.getElementById("unsub3").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(3);>Unsubscribe</button>";
+            document.getElementById("unsub3").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(3);>Unsubscribe</button>";
             break;
     }
 
     //substance abuse switch
     switch (session4.subscription) {
-        case false:
+        case "false":
             document.getElementById("subInfo4").innerHTML = "Not Subscribed";
             document.getElementById("subJoin4").innerHTML = "<button id = \"joinButton\" onclick= subscribeToSession(4);>Subscribe</button>";
-            //document.getElementById("unbsub4").innerHTML = "";
+            document.getElementById("unsub4").innerHTML = "";
             break;
-        case true:
+        case "true":
             document.getElementById("subInfo4").innerHTML = "Subscribed";
             checkTime(4);
-            //document.getElementById("unsub4").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(4);>Unsubscribe</button>";
+            document.getElementById("unsub4").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(4);>Unsubscribe</button>";
             break;
     }
 
     
 }
 
+/* 
+This function checks local storage to see if the user is subscribed to a session.
+This is only for use with a localhost session, and is not intended for proper web deployment.
+The function checks to see if a storage item exists for that subscription, if not, it creates one and defaults to unsubscribed.
+*/
+function checkStorage() {
+    if (localStorage.getItem('sub1')) {
+        session1.subscription = localStorage.getItem('sub1');
+    }
+    else {
+        localStorage.setItem("sub1","false");
+        session1.subscription = localStorage.getItem('sub1');
+    }
+
+    if (localStorage.getItem('sub2')) {
+        session2.subscription = localStorage.getItem('sub2');
+    }
+    else {
+        localStorage.setItem("sub2","false");
+        session2.subscription = localStorage.getItem('sub2');
+    }
+
+    if (localStorage.getItem('sub3')) {
+        session3.subscription = localStorage.getItem('sub3');
+    }
+    else {
+        localStorage.setItem("sub3","false");
+        session3.subscription = localStorage.getItem('sub3');
+    }
+
+    if (localStorage.getItem('sub4')) {
+        session4.subscription = localStorage.getItem('sub4');
+    }
+    else {
+        localStorage.setItem("sub4","false");
+        session4.subscription = localStorage.getItem('sub4');
+    }
+}
+
 /*
 This function activates when the user subscribes to a session.
-It will set the subsciption variable of the appropriate session object.
+It will set the local storage item of the appropriate session object.
 Then it calls checkSubStatus to update the display.
 */
 function subscribeToSession(sessionNum) {
     switch (sessionNum) {
-        case 1: session1.subscription = true; break;
-        case 2: session2.subscription = true; break;
-        case 3: session3.subscription = true; break;
-        case 4: session4.subscription = true; break;
+        case 1: localStorage.sub1 = "true"; break;
+        case 2: localStorage.sub2 = "true"; break;
+        case 3: localStorage.sub3 = "true"; break;
+        case 4: localStorage.sub4 = "true"; break;
     }
 
     checkSubStatus();
@@ -94,15 +134,15 @@ function subscribeToSession(sessionNum) {
 
 /*
 This function will unsubscribe a user from a session.
-It sets the subscription variable of the appropriate session object.
+It sets the local storage item of the appropriate session object.
 Then it calls checkSubStatus to update the display.
 */
 function unsubscribeSession(sessionNum) {
     switch (sessionNum) {
-        case 1: session1.subscription = false; break;
-        case 2: session2.subscription = false; break;
-        case 3: session3.subscription = false; break;
-        case 4: session4.subscription = false; break;
+        case 1: localStorage.sub1 = "false"; break;
+        case 2: localStorage.sub2 = "false"; break;
+        case 3: localStorage.sub3 = "false"; break;
+        case 4: localStorage.sub4 = "false"; break;
     }
 
     checkSubStatus();
@@ -117,7 +157,7 @@ If the session is not active, it will display a message with no function.
 function checkTime(sessionNum) {
     var currentTime = new Date();
     currentHour = currentTime.getHours();
-    currentHour = 13;    
+    currentHour = 10;    
 
     switch (sessionNum) {
         //depression
@@ -159,6 +199,10 @@ function checkTime(sessionNum) {
                 document.getElementById("subJoin4").innerHTML = "<button id = \"joinButton\">Session Not Active Right Now</button>";
             } 
             break;
+    }
+
+    function timeErase() {
+        
     }
 
 }
