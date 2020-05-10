@@ -68,7 +68,7 @@ button{
     border-radius: 0 0 2px 2px;
 }
 
-#sessionContainer{
+#Container{
     text-align: center;
 }
 
@@ -82,6 +82,7 @@ button{
     width: 60%;
     border-radius: 0 0 2px 2px;
     font-family: 'Nunito';
+    display: inline-block;
 }
 
 /*Navigation Bar Style*/
