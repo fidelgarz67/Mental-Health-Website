@@ -12,6 +12,7 @@ const session = require('express-session')
 const overRide = require('method-override')
 const initialPassport = require('./passportConfig')
 var path = require('path')
+var socket = require('socket.io');      //socket for chat
 
 //allow for passport to verify 
 initialPassport(
@@ -107,4 +108,33 @@ function notAuthenticated(req, res, next){
 }
 
 //webpage is on localhost - 2000
-app.listen(2000)
+//app.listen(2000)
+
+/****** Chatroom Code ******/
+
+//Create a server
+var server = app.listen(2000, function(){
+    console.log('Listening to request on PORT 2000');    
+});
+
+//static files for the server to 'see'
+app.use(express.static('/SessionPageSubscription/SessionPage/public'));
+
+
+//Socket Setup
+var io = socket(server);
+
+//listen for a connection
+io.on('connection', function(socket){
+    console.log('Made a socket connection', socket.id);
+
+    //listen to the message
+    socket.on('chat', function(data){
+        //send this message to everyone thats connected to the chat
+        io.sockets.emit('chat', data);
+    });
+
+    socket.on('typing', function(data){
+        socket.broadcast.emit('typing', data)
+    });
+});

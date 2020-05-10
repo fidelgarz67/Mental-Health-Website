@@ -217,36 +217,80 @@ function timeErase(sessionNum) {
     currentHour = 10;    
 
     switch (sessionNum) {
-    //depression
-    case 1: 
-        if (currentHour < session1.timeStart || currentHour >= session1.timeEnd) {
-            document.write("Session is Not Active!");
-            window.location.replace("selection.html");
-        }
-        break;
-    
-    //ptsd    
-    case 2: 
-        if (currentHour < session2.timeStart || currentHour >= session2.timeEnd) {
-            document.write("Session is Not Active!");
-            window.location.replace("selection.html");
-        }
-        break;
-    
-    //anxiety
-    case 3: 
-        if (currentHour < session3.timeStart || currentHour >= session3.timeEnd) {
-            document.write("Session is Not Active!");
-            window.location.replace("selection.html");
-        }
-        break;
+        //depression
+        case 1: 
+            if (currentHour < session1.timeStart || currentHour >= session1.timeEnd) {
+                document.write("Session is Not Active!");
+                window.location.replace("selection.html");
+            } break;
+        
+        //ptsd    
+        case 2: 
+            if (currentHour < session2.timeStart || currentHour >= session2.timeEnd) {
+                document.write("Session is Not Active!");
+                window.location.replace("selection.html");
+            } break;
+        
+        //anxiety
+        case 3: 
+            if (currentHour < session3.timeStart || currentHour >= session3.timeEnd) {
+                document.write("Session is Not Active!");
+                window.location.replace("selection.html");
+            } break;
 
-    //substance abuse
-    case 4: 
-        if (currentHour < session4.timeStart || currentHour >= session4.timeEnd) {
-            document.write("Session is Not Active!");
-            window.location.replace("selection.html");
-        }
-        break;
+        //substance abuse
+        case 4: 
+            if (currentHour < session4.timeStart || currentHour >= session4.timeEnd) {
+                document.write("Session is Not Active!");
+                window.location.replace("selection.html");
+            } break;
     }
+}
+
+/*
+This functions checks to see if the user is subscribed to the session passed in.
+This is to handle a case where the session is active at the time, but the user
+tries to access the session without being subscribed.
+Uses window.location.replace so that the back button won't take you back to that page.
+*/
+function sessionSubCheck(sessionNum) {
+    switch (sessionNum) {
+        //depression
+        case 1:
+            if (localStorage.getItem('sub1').localeCompare("false") == 0) {
+                document.write("You Are Not Subscribed to This Session!");
+                window.location.replace("selection.html");
+            } break;
+
+        //ptsd
+        case 2:
+            if (localStorage.getItem('sub2' == "false")) {
+                document.write("You Are Not Subscribed to This Session!");
+                window.location.replace("selection.html");
+            } break;
+
+        //anxiety
+        case 3:
+            if (localStorage.getItem('sub3' == "false")) {
+                document.write("You Are Not Subscribed to This Session!");
+                window.location.replace("selection.html");
+            } break;
+
+        //substance abuse
+        case 4:
+            if (localStorage.getItem('sub4' == "false")) {
+                document.write("You Are Not Subscribed to This Session!");
+                window.location.replace("selection.html");
+            } break;
+    }
+}
+
+/*
+This function is called upon loading the session pages.
+It's used to call the two check functions that will kick the user out of a session
+page they're not subscribed to or is not active.
+*/
+function sessionChecker(num) {
+    timeErase(num);
+    sessionSubCheck(num);
 }
