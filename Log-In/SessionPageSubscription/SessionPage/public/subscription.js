@@ -149,7 +149,7 @@ function unsubscribeSession(sessionNum) {
 }
 
 /*
-This functions checks the current time of the PC, and controls whether the session is actually joinable.
+This function checks the current time of the PC, and controls whether the session is actually joinable.
 It will get the hour of the current time. Then, it compares it to the start and end hour of the appropriate session.
 If the session is active at the time, the user will be taken to the respective chat.
 If the session is not active, it will display a message with no function.
@@ -157,6 +157,7 @@ If the session is not active, it will display a message with no function.
 function checkTime(sessionNum) {
     var currentTime = new Date();
     currentHour = currentTime.getHours();
+    //force time for testing purposes only
     currentHour = 10;    
 
     switch (sessionNum) {
@@ -200,9 +201,52 @@ function checkTime(sessionNum) {
             } 
             break;
     }
+}
 
-    function timeErase() {
-        
+/*
+This function checks for time within the individual session page.
+If the session is not active, it will redirect to the selection page.
+Uses window.location.replace so that the back button won't take you back to that page.
+This is to prevent a case where you type the address of an inactive session directly in the address bar.
+*/
+
+function timeErase(sessionNum) {
+    var currentTime = new Date();
+    currentHour = currentTime.getHours();
+    //force time for testing purposes only
+    currentHour = 10;    
+
+    switch (sessionNum) {
+    //depression
+    case 1: 
+        if (currentHour < session1.timeStart || currentHour >= session1.timeEnd) {
+            document.write("Session is Not Active!");
+            window.location.replace("selection.html");
+        }
+        break;
+    
+    //ptsd    
+    case 2: 
+        if (currentHour < session2.timeStart || currentHour >= session2.timeEnd) {
+            document.write("Session is Not Active!");
+            window.location.replace("selection.html");
+        }
+        break;
+    
+    //anxiety
+    case 3: 
+        if (currentHour < session3.timeStart || currentHour >= session3.timeEnd) {
+            document.write("Session is Not Active!");
+            window.location.replace("selection.html");
+        }
+        break;
+
+    //substance abuse
+    case 4: 
+        if (currentHour < session4.timeStart || currentHour >= session4.timeEnd) {
+            document.write("Session is Not Active!");
+            window.location.replace("selection.html");
+        }
+        break;
     }
-
 }
