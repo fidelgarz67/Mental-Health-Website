@@ -1,5 +1,5 @@
 //establish the connection 
-var socket = io.connect('http://localhost:4000/');
+var socket = io.connect('http://localhost:2000/');
 
 //query the DOM
 var message = document.getElementById('message');

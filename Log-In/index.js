@@ -27,6 +27,7 @@ const users = []
 //let the server know that we will be using ejs
 app.set('view-engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'css')));
+app.use(express.static(path.join(__dirname, 'MainHomePage')));
 
 //get individual aspects of the form to use in the POST method
 app.use(express.urlencoded({extended : false}))
@@ -53,7 +54,7 @@ app.get('/login', notAuthenticated, (req, res) =>{
 });
 
 app.post('/login', notAuthenticated, passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/public/index.html',
     failureRedirect: '/login',
     failureFlash: true              //show error message
 }))

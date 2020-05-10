@@ -1,5 +1,5 @@
     /*Import fonts*/
-    
+
     @font-face {
         src: url(fonts/Heavitas.ttf);
         font-family: H;
@@ -249,7 +249,7 @@ button{
         display: block;
         height: 1px;
         border: 0;
-        border-top: 1px solid #cccccc;
+        border-top: 1px solid slategray;
         margin: 1em 0;
         padding: 0;
     }
@@ -323,7 +323,6 @@ button{
         }
     }
     /*INDEX: Clickable bottons on the home screen/ Image/ Description*/
-    
     .index-banner {
         isolation: isolate;
         width: 100%;
@@ -535,8 +534,9 @@ button{
         .index-links div {
             margin: 10px 10px 0;
             width: calc(100-32px);
-            background-color: #f2f2f2;
+            background-color: rgb(89, 169, 248);
         }
+
         /*Experiance screen fix*/
         .experience {
             width: 100%;
