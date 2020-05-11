@@ -165,7 +165,7 @@ function checkTime(sessionNum) {
     var currentTime = new Date();
     currentHour = currentTime.getHours();
     //force time for testing purposes only
-    //currentHour = 10;    
+    //currentHour = 16;    
 
     switch (sessionNum) {
         //depression
@@ -221,7 +221,7 @@ function timeErase(sessionNum) {
     var currentTime = new Date();
     currentHour = currentTime.getHours();
     //force time for testing purposes only
-    //currentHour = 10;    
+    //currentHour = 16;    
 
     switch (sessionNum) {
         //depression

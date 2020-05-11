@@ -23,19 +23,18 @@
         <h1 id ="Title" >Anxiety Help Session</h1>
 
         <!--Source: https://developers.google.com/youtube/iframe_api_reference -->
-        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <!--create a new div in the page for the player-->
         <div id="player"></div>
 
         <script>
-        // 2. This code loads the IFrame Player API code asynchronously.
-        var tag = document.createElement('script');
+        //load in the api resource
+        var newTag = document.createElement('script');
 
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        newTag.src = "https://www.youtube.com/iframe_api";
+        var newScriptTag = document.getElementsByTagName('script')[0];
+        newScriptTag.parentNode.insertBefore(newTag, newScriptTag);
 
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
+        //this will draw a 720p player, and also set the video to be played and defines events
         var player;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
@@ -49,24 +48,20 @@
             });
         }
 
-        // 4. The API will call this function when the video player is ready.
+        //this will call the play function when the page and player have loaded
         function onPlayerReady(event) {
             event.target.playVideo();
         }
 
-        // 5. The API calls this function when the player's state changes.
-        //    The function indicates that when playing a video (state=1),
-        //    the player should play for six seconds and then stop.
+        //this function is used to manipulate video functions based on a state change (play, stop, etc.)
         var done = false;
         function onPlayerStateChange(event) {
             if (event.data == YT.PlayerState.PLAYING && !done) {
-            //setTimeout(stopVideo, 6000);
+            //this is where a function would be executed upon a state change
             done = true;
             }
         }
-        function stopVideo() {
-            player.stopVideo();
-        }
+        
         </script>
         
         <div id="My-Chat">
