@@ -1,10 +1,10 @@
 body{
-    width: 100vw;
-    height: 100vh;
     background-image: url('https://preview.redd.it/xbf2k4bvb4y41.jpg?width=2494&format=pjpg&auto=webp&s=2e7f311b4262a16b5ca7a1cba65670abb21dc0da');
     font-family: 'Nunito';
-    background-repeat: no-repeat;
-    background-position: center; 
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #Title{
