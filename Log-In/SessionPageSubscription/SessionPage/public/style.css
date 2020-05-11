@@ -1,6 +1,37 @@
+@font-face {
+    font-family: 'H';
+  src: url('fonts/Heavitas.ttf') format('opentype'),
+       url('fonts/Heavitas.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  
+  }
+  
+  @font-face {
+    font-family: 'R';
+  src: url('fonts/RenogareSoft-Regular.ttf') format('opentype'),
+       url('fonts/RenogareSoft-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  
+  }
+
+  @font-face {
+    font-family: 'B';
+  src: url('fonts/BigJohnPRO-Bold.otf') format('opentype'),
+       url('fonts/BigJohnPRO-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  
+  }
+  
+  .section-1-header {
+      font-family: anuratiregular;
+  }
+
 body{
     background-image: url('https://preview.redd.it/xbf2k4bvb4y41.jpg?width=2494&format=pjpg&auto=webp&s=2e7f311b4262a16b5ca7a1cba65670abb21dc0da');
-    font-family: 'Nunito';
+    font-family: 'H';
     width: 100%;
     position: absolute;
     top: 0;
@@ -10,7 +41,7 @@ body{
 #Title{
     text-align: center;
 
-    font-family: 'Nunito';
+    font-family: 'H';
     color: white;
     font-weight: bold;
     text-transform: uppercase;
@@ -81,7 +112,7 @@ input{
     width: 100%;
     background: #fff;
     border-bottom: 1px solid #eee;
-    font-family: Nunito;
+    font-family: R;
     font-size: 16px;
 }
 
@@ -94,6 +125,7 @@ button{
     width: 100%;
     border-radius: 0 0 2px 2px;
 
+
 }
 
 #SubButton{
@@ -104,6 +136,8 @@ button{
     padding: 12px 0;
     width: 100%;
     border-radius: 0 0 2px 2px;
+    padding: 40px;
+
 
 }
 
@@ -167,7 +201,7 @@ button{
     border: 0;
     padding: 12px 0;
     width: 60%;
-    font-family: 'Nunito';
+    font-family: 'R';
     display: inline-block;
     border-radius: 20px;
 }

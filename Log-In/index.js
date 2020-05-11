@@ -29,6 +29,8 @@ const users = []
 app.set('view-engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'css')));
 app.use(express.static(path.join(__dirname, 'SessionPageSubscription')));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 //get individual aspects of the form to use in the POST method
 app.use(express.urlencoded({extended : false}))

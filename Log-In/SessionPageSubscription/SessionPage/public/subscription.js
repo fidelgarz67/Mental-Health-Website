@@ -15,6 +15,9 @@ var session4 = {name:"Substance Abuse", subscription:"", timeStart: 15, timeEnd:
 
 /*Functions*/
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 /* 
 Checks the subscription status of each session. If the user is not subscribed, it will display a subscribe button.
 If the user is subscribed, it will call checkTime to further verify join requirements.
