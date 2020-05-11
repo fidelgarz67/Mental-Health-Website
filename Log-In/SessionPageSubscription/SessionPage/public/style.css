@@ -17,9 +17,18 @@
   }
 
   @font-face {
-    font-family: 'B';
+    font-family: 'BR';
   src: url('fonts/BigJohnPRO-Bold.otf') format('opentype'),
        url('fonts/BigJohnPRO-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  
+  }
+
+  @font-face {
+    font-family: 'BR';
+  src: url('fonts/BigJohnPRO-Regular.otf') format('opentype'),
+       url('fonts/BigJohnPRO-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   
@@ -112,7 +121,7 @@ input{
     width: 100%;
     background: #fff;
     border-bottom: 1px solid #eee;
-    font-family: R;
+    font-family: 'BR';
     font-size: 16px;
 }
 
@@ -201,7 +210,7 @@ button{
     border: 0;
     padding: 12px 0;
     width: 60%;
-    font-family: 'R';
+    font-family: 'BR';
     display: inline-block;
     border-radius: 20px;
 }
