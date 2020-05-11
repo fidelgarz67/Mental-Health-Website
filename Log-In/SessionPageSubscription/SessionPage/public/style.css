@@ -124,6 +124,7 @@ button{
     padding: 12px 0;
     width: 100%;
     border-radius: 0 0 2px 2px;
+    font-family: H;
 
 
 }
@@ -136,7 +137,6 @@ button{
     padding: 12px 0;
     width: 100%;
     border-radius: 0 0 2px 2px;
-    padding: 40px;
 
 
 }
