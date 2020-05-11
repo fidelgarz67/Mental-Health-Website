@@ -3,6 +3,10 @@ subscription.js
 Author: Joseph Camacho-Terrazas
 */
 
+/*
+     changed "button" for "SubButton" in case of anything change it back!
+*/
+
 /*Session Objects*/
 var session1 = {name:"Depression", subscription:"", timeStart: 9, timeEnd: 11};
 var session2 = {name:"PTSD", subscription:"", timeStart: 11, timeEnd: 13};
@@ -22,13 +26,13 @@ function checkSubStatus() {
     switch (session1.subscription) {
         case "false":
             document.getElementById("subInfo1").innerHTML = "Not Subscribed";
-            document.getElementById("subJoin1").innerHTML = "<button id = \"joinButton\" onclick= subscribeToSession(1);>Subscribe</button>";
+            document.getElementById("subJoin1").innerHTML = "<SubButton id = \"joinButton\" onclick= subscribeToSession(1);>Subscribe</SubButton>";
             document.getElementById("unsub1").innerHTML = "";
             break;
         case "true":
             document.getElementById("subInfo1").innerHTML = "Subscribed";
             checkTime(1);
-            document.getElementById("unsub1").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(1);>Unsubscribe</button>";
+            document.getElementById("unsub1").innerHTML = "<SubButton id = \"unsubButton\" onclick= unsubscribeSession(1);>Unsubscribe</SubButton>";
             break;
         }
 
@@ -36,13 +40,13 @@ function checkSubStatus() {
     switch (session2.subscription) {
         case "false":
             document.getElementById("subInfo2").innerHTML = "Not Subscribed";
-            document.getElementById("subJoin2").innerHTML = "<button id = \"joinButton\" onclick= subscribeToSession(2);>Subscribe</button>";
+            document.getElementById("subJoin2").innerHTML = "<SubButton id = \"joinButton\" onclick= subscribeToSession(2);>Subscribe</SubButton>";
             document.getElementById("unsub2").innerHTML = "";
             break;
         case "true":
             document.getElementById("subInfo2").innerHTML = "Subscribed";
             checkTime(2);
-            document.getElementById("unsub2").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(2);>Unsubscribe</button>";
+            document.getElementById("unsub2").innerHTML = "<SubButton id = \"unsubButton\" onclick= unsubscribeSession(2);>Unsubscribe</SubButton>";
             break;
     }
 
@@ -50,13 +54,13 @@ function checkSubStatus() {
     switch (session3.subscription) {
         case "false":
             document.getElementById("subInfo3").innerHTML = "Not Subscribed";
-            document.getElementById("subJoin3").innerHTML = "<button id = \"joinButton\" onclick= subscribeToSession(3);>Subscribe</button>";
+            document.getElementById("subJoin3").innerHTML = "<SubButton id = \"joinButton\" onclick= subscribeToSession(3);>Subscribe</SubButton>";
             document.getElementById("unsub3").innerHTML = "";
             break;
         case "true":
             document.getElementById("subInfo3").innerHTML = "Subscribed";
             checkTime(3);
-            document.getElementById("unsub3").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(3);>Unsubscribe</button>";
+            document.getElementById("unsub3").innerHTML = "<SubButton id = \"unsubButton\" onclick= unsubscribeSession(3);>Unsubscribe</SubButton>";
             break;
     }
 
@@ -64,13 +68,13 @@ function checkSubStatus() {
     switch (session4.subscription) {
         case "false":
             document.getElementById("subInfo4").innerHTML = "Not Subscribed";
-            document.getElementById("subJoin4").innerHTML = "<button id = \"joinButton\" onclick= subscribeToSession(4);>Subscribe</button>";
+            document.getElementById("subJoin4").innerHTML = "<SubButton id = \"joinButton\" onclick= subscribeToSession(4);>Subscribe</SubButton>";
             document.getElementById("unsub4").innerHTML = "";
             break;
         case "true":
             document.getElementById("subInfo4").innerHTML = "Subscribed";
             checkTime(4);
-            document.getElementById("unsub4").innerHTML = "<button id = \"unsubButton\" onclick= unsubscribeSession(4);>Unsubscribe</button>";
+            document.getElementById("unsub4").innerHTML = "<SubButton id = \"unsubButton\" onclick= unsubscribeSession(4);>Unsubscribe</SubButton>";
             break;
     }
 
@@ -164,40 +168,40 @@ function checkTime(sessionNum) {
         //depression
         case 1: 
             if (currentHour >= session1.timeStart && currentHour < session1.timeEnd) {
-                document.getElementById("subJoin1").innerHTML = "<button id = \"joinButton\" onclick=\"document.location = \'depression.html\'\">Join Session 1</button>";
+                document.getElementById("subJoin1").innerHTML = "<SubButton id = \"joinButton\" onclick=\"document.location = \'depression.html\'\">Join Session 1</SubButton>";
             }
             else {
-                document.getElementById("subJoin1").innerHTML = "<button id = \"joinButton\">Session Not Active Right Now</button>";
+                document.getElementById("subJoin1").innerHTML = "<SubButton id = \"joinButton\">Session Not Active Right Now</SubButton>";
             }
             break;
         
         //ptsd    
         case 2:
             if (currentHour >= session2.timeStart && currentHour < session2.timeEnd) {
-                document.getElementById("subJoin2").innerHTML = "<button id = \"joinButton\" onclick=\"document.location = \'ptsd.html\'\">Join Session 2</button>";
+                document.getElementById("subJoin2").innerHTML = "<SubButton id = \"joinButton\" onclick=\"document.location = \'ptsd.html\'\">Join Session 2</SubButton>";
             }
             else {
-                document.getElementById("subJoin2").innerHTML = "<button id = \"joinButton\">Session Not Active Right Now</button>";
+                document.getElementById("subJoin2").innerHTML = "<SubButtontton id = \"joinButton\">Session Not Active Right Now</SubButton>";
             } 
             break;
         
         //anxiety
         case 3:
             if (currentHour >= session3.timeStart && currentHour < session3.timeEnd) {
-                document.getElementById("subJoin3").innerHTML = "<button id = \"joinButton\" onclick=\"document.location = \'anxiety.html\'\">Join Session 3</button>";
+                document.getElementById("subJoin3").innerHTML = "<SubButton id = \"joinButton\" onclick=\"document.location = \'anxiety.html\'\">Join Session 3</SubButton>";
             }
             else {
-                document.getElementById("subJoin3").innerHTML = "<button id = \"joinButton\">Session Not Active Right Now</button>";
+                document.getElementById("subJoin3").innerHTML = "<SubButton id = \"joinButton\">Session Not Active Right Now</SubButton>";
             } 
             break;
 
         //substance abuse
         case 4:
             if (currentHour >= session4.timeStart && currentHour < session4.timeEnd) {
-                document.getElementById("subJoin4").innerHTML = "<button id = \"joinButton\" onclick=\"document.location = \'substance.html\'\">Join Session 4</button>";
+                document.getElementById("subJoin4").innerHTML = "<SubButton id = \"joinButton\" onclick=\"document.location = \'substance.html\'\">Join Session 4</SubButton>";
             }
             else {
-                document.getElementById("subJoin4").innerHTML = "<button id = \"joinButton\">Session Not Active Right Now</button>";
+                document.getElementById("subJoin4").innerHTML = "<SubButton id = \"joinButton\">Session Not Active Right Now</SubButton>";
             } 
             break;
     }

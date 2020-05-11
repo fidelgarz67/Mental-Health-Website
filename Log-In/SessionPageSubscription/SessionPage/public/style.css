@@ -1,25 +1,47 @@
 body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://preview.redd.it/xbf2k4bvb4y41.jpg?width=2494&format=pjpg&auto=webp&s=2e7f311b4262a16b5ca7a1cba65670abb21dc0da');
     font-family: 'Nunito';
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+#Title{
+    text-align: center;
+
+    font-family: 'Nunito';
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-top: 60px;
+
+
 }
 
 h2{
     font-size: 18px;
     padding: 10px 20px;
-    color: #575ed8;
+    color: rgb(58, 57, 80);
 }
 
-#my-chat{
+#My-Chat{
     max-width: 600px;
     margin: 30px auto;
-    border: 1px solid #ddd;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.05);
     border-radius: 2px;
+    margin-right: 200px auto;
+
 }
 
 #chat-window{
     height: 400px;
     overflow: auto;
     background: #f9f9f9;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
 }
 
 #output p{
@@ -27,16 +49,21 @@ h2{
     margin: 0 20px;
     border-bottom: 1px solid #e9e9e9;
     color: #555;
+
+
+
 }
 
 #feedback p{
     color: #aaa;
     padding: 14px 0px;
-    margin: 0 20px;
+
+
+
 }
 
 #output strong{
-    color: #575ed8;
+    color: #2d2e50;
 }
 
 label{
@@ -59,30 +86,90 @@ input{
 }
 
 button{
-    background: #575ed8;
+    background: #b5b7e4;
     color: #fff;
     font-size: 18px;
     border: 0;
     padding: 12px 0;
     width: 100%;
     border-radius: 0 0 2px 2px;
+
+}
+
+#SubButton{
+    background: white;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 0 0 2px 2px;
+
+}
+
+#handle{
+
+
+
+}
+#message{
+
+
+
+}
+
+#send{
+    background: #5a6fca;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 0 0 2px 2px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+
+
 }
 
 #Container{
     text-align: center;
+
+}
+
+#Box{
+    text-align: center;
+    background-color: white;
+    margin-left: 320px ;
+    margin-right: 330px;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+
+
+}
+
+#name{
+    font-weight: bolder;
+}
+
+#SubSelect{
+    background: #2d2e50;
+
 }
 
 #sessionBox{
-    background: #575ed8;
+    background: #2d2e50;
     color: #fff;
     text-align: center;
     font-size: 18px;
     border: 0;
     padding: 12px 0;
     width: 60%;
-    border-radius: 0 0 2px 2px;
     font-family: 'Nunito';
     display: inline-block;
+    border-radius: 20px;
 }
 
 /*Navigation Bar Style*/
@@ -91,8 +178,10 @@ ul.navbar {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #575ed8;
+    background-color: #2d2e50;
     border:medium inset gray;
+    border-radius: 20px;
+    margin: 20px;
 }
   
 ul.navbar li {float: left;}
@@ -107,6 +196,8 @@ ul.navbar li a {
     border-right:1px solid white;
     border-left:1px solid white;
     transition-duration: 0.4s;
+    border-radius: 20px;
+
 }
   
 ul.navbar li a:hover:not(.active) {
@@ -116,15 +207,25 @@ ul.navbar li a:hover:not(.active) {
 ul.navbar li a.active {
     background-color: #4CAF50;
     border: medium inset silver;
+    border-radius: 20px;
+
 }
   
 ul.navbar li.right {
     float: right;
+    border: medium inset silver;
+    border-radius: 20px;
+
 }
 
 ul.navbar li.rightactive {
     float: right; background-color: #4CAF50;
+    border: medium inset silver;
+    border-radius: 20px;
+
+
 }
+
   
 @media screen and (max-width: 900px) {
     ul.navbar li.right, 
