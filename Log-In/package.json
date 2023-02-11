@@ -16,7 +16,7 @@
     "express-flash": "0.0.2",
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
-    "nodemon": "^2.0.3",
+    "nodemon": "^2.0.20",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "socket.io": "^2.4.0"
